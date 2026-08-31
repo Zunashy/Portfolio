@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page introuvable — Guillaume Guillerot</title>
+<meta name="description" content="La page demandée n'existe pas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfbfa;--paper-2:#f1f1ef;--ink:#121316;--graphite:#64666b;--rule:#e5e5e1;
+  --accent:#1b3a5c;--night:#14171b;--light:#f0efec;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Inter Tight','Helvetica Neue',Arial,sans-serif;
+  --gut:clamp(22px,5vw,72px);--max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.018em;line-height:1.05}
+p{margin:0 0 1.1em}
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--graphite)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(251,251,250,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.bar{max-width:var(--max);margin:0 auto;padding:16px var(--gut);display:flex;align-items:center;gap:24px}
+.brand{font-family:var(--serif);font-size:19px;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--graphite)}
+.cta{margin-left:auto;font-size:14px;font-weight:500;text-decoration:none;background:var(--ink);
+  color:var(--paper);padding:11px 20px;border-radius:2px;white-space:nowrap;transition:background .2s}
+.cta:hover{background:var(--accent)}
+
+.doc-head{padding:clamp(48px,9vh,96px) 0 clamp(28px,4vh,44px);border-bottom:1px solid var(--rule)}
+.doc-head h1{font-size:clamp(38px,6.4vw,74px);margin-bottom:14px}
+.doc-head .maj{font-size:14px;color:var(--graphite)}
+article{max-width:68ch;padding-block:clamp(38px,6vh,64px) clamp(48px,8vh,96px)}
+article section{padding-top:clamp(28px,4vh,44px);margin-top:clamp(28px,4vh,44px);border-top:1px solid var(--rule)}
+article section:first-of-type{border-top:0;margin-top:0;padding-top:0}
+article h2{font-size:clamp(24px,3.2vw,34px);margin-bottom:16px}
+article h3{font-family:var(--sans);font-size:16px;font-weight:600;margin:22px 0 6px}
+article p,article li{color:#2b2d33}
+article ul{margin:0 0 1.1em;padding-left:1.1em}
+article li{margin-bottom:.45em}
+article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(27,58,92,.3)}
+article a:hover{border-color:var(--accent)}
+.fiche{list-style:none;margin:0 0 1.1em;padding:0;border-top:1px solid var(--rule)}
+.fiche li{display:flex;flex-wrap:wrap;gap:6px 18px;padding:12px 2px;border-bottom:1px solid var(--rule);margin:0}
+.fiche b{font-weight:600;min-width:190px;flex:none}
+.fiche span{color:#2b2d33}
+.note{background:var(--paper-2);border-radius:2px;padding:18px 20px;font-size:15px;color:var(--graphite)}
+.note p:last-child{margin-bottom:0}
+.retour{display:inline-block;margin-top:8px;font-size:15px;text-decoration:none;color:var(--graphite);
+  border-bottom:1px solid var(--rule)}
+.retour:hover{color:var(--ink);border-color:var(--ink)}
+
+footer{border-top:1px solid var(--rule);padding:28px 0 44px;display:flex;flex-wrap:wrap;gap:14px;
+  justify-content:space-between;font-size:13.5px;color:var(--graphite)}
+footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--ink);border-color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.err{min-height:calc(100vh - 74px);display:grid;align-content:center;
+  padding-block:clamp(60px,12vh,120px) clamp(60px,12vh,120px)}
+.err h1{font-size:clamp(42px,8vw,104px);max-width:14ch;margin-bottom:22px}
+.err h1 em{font-style:italic;font-weight:300}
+.err p{font-size:clamp(18px,2vw,21px);color:var(--graphite);max-width:52ch}
+.err .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{font-size:15px;font-weight:500;text-decoration:none;padding:14px 24px;border-radius:2px;
+  border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+.err .code{font-family:var(--serif);font-size:clamp(90px,22vw,240px);line-height:.8;color:var(--rule);
+  margin-bottom:clamp(18px,3vh,34px);letter-spacing:-.04em}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="index.html">Guillaume Guillerot <span>Monteur vidéo</span></a>
+    <a class="cta" href="https://wa.me/33618627629">Me contacter</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="err">
+    <div class="code" aria-hidden="true">404</div>
+    <h1>Cette page <em>n'existe pas.</em></h1>
+    <p>Le lien est peut-être erroné, ou la page a été déplacée. Les vidéos, elles, sont toujours à leur place.</p>
+    <div class="actions">
+      <a class="btn" href="index.html">Retour à l'accueil</a>
+      <a class="btn line" href="index.html#videos">Voir les vidéos</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span id="annee">© 2026 Guillaume Guillerot</span>
+    <span><a href="mentions-legales.html">Mentions légales</a> &nbsp;·&nbsp; <a href="politique-de-confidentialite.html">Politique de confidentialité</a></span>
+  </footer>
+</div>
+
+<script>
+document.getElementById('annee').textContent = '© ' + new Date().getFullYear() + ' Guillaume Guillerot';
+</script>
+</body>
+</html>
