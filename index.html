@@ -119,7 +119,7 @@ section{padding-block:clamp(38px,5vh,64px)}
 .ytlink:hover{color:var(--accent);border-color:var(--accent)}
 .night .ytlink{color:rgba(240,239,236,.6);border-color:rgba(240,239,236,.25)}
 .night .ytlink:hover{color:var(--light);border-color:var(--light)}
-.vert .ytlink,.doc .ytlink{margin-top:7px;font-size:13px}
+.vert .ytlink,.doc .ytlink{margin-top:9px;font-size:13px}
 
 .playlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
 .playlist li{border-bottom:1px solid var(--rule)}
@@ -406,9 +406,9 @@ const VIDEOS_PRO = [
 /* reseau : 'youtube' (defaut) ou 'instagram'. Pour Instagram, id = code du post.
    poster : facultatif, chemin d'une image de couverture (capture du reel). */
 const VERTICAUX = [
-  {id:'SMuVtCp-b4Q', titre:'UGC Wilkinson', desc:'Wilkinson Sword Hydro 5'},
-  {id:'qte8ngmJ220', titre:'UGC Sony', desc:'Sony WH-1000XM3'},
-  {reseau:'instagram', id:'DcovQ9dMVtN', titre:'Réel Instagram', desc:'Format vertical social', poster:''}
+  {id:'SMuVtCp-b4Q', titre:'UGC Wilkinson'},
+  {id:'qte8ngmJ220', titre:'UGC Sony'},
+  {reseau:'instagram', id:'DcovQ9dMVtN', titre:'Réel Instagram', poster:''}
 ];
 
 const DOCUMENTAIRES = [
@@ -473,7 +473,7 @@ VERTICAUX.forEach(v=>{
         ${insta ? 'data-ratio="326"' : ''} aria-label="Lire : ${v.titre}">
       ${fond}<span class="mark">${PLAY}</span>
     </button>
-    <h3>${v.titre}</h3><p>${v.desc}</p>
+    <h3>${v.titre}</h3>
     <a class="ytlink" href="${lien}" target="_blank" rel="noopener">${ou}</a>`;
   verts.appendChild(el);
 });
