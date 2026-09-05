@@ -66,7 +66,7 @@ nav a:hover,nav a[aria-current=true]{color:var(--ink);border-color:var(--ink)}
 .cta:hover{background:var(--accent)}
 
 /* ---------------- héro ---------------- */
-.hero{padding:clamp(112px,16vh,168px) 0 clamp(40px,6vh,72px)}
+.hero{padding:clamp(112px,16vh,168px) 0 0}
 .hero-grid{display:grid;gap:clamp(32px,5vw,64px);grid-template-columns:1fr;align-items:end}
 @media(min-width:900px){.hero-grid{grid-template-columns:1.35fr .65fr}}
 h1 em{font-style:italic;font-weight:300}
@@ -83,6 +83,8 @@ figure.portrait figcaption{margin-top:12px;font-size:13px;color:var(--graphite)}
 
 .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);
   border-block:1px solid var(--rule);margin-top:clamp(40px,6vh,72px)}
+#videos{padding-top:0}
+#videos .sec-head{border-top:0;padding-top:clamp(26px,3.5vh,40px)}
 @media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
 .facts div{background:var(--paper);padding:22px 4px}
 .facts b{display:block;font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:400;line-height:1}
@@ -143,13 +145,14 @@ section{padding-block:clamp(38px,5vh,64px)}
 .vert .screen img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
 .vert:hover .screen img{transform:scale(1.03)}
 .vert .screen iframe{width:100%;height:100%;border:0}
+.vert{display:flex;flex-direction:column}
 .vert h3{font-size:17px;margin-top:13px}
+.vert .ytlink{align-self:flex-start}
 .vert p{margin:5px 0 0;font-size:14px;color:var(--graphite)}
 .vert .screen.ig{display:grid;place-items:center;background:linear-gradient(158deg,#242830,#14171b)}
 .ig-facade{display:grid;gap:11px;justify-items:center;color:rgba(240,239,236,.82);font-size:13px}
 .ig-facade svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.5}
 .ig-facade b{font-weight:500;letter-spacing:.01em}
-.vert .ig-live{position:relative;overflow:hidden;background:#fff;border-radius:2px;padding:0}
 .vert .mark{position:absolute;left:12px;bottom:12px;z-index:2;display:grid;place-items:center;
   width:34px;height:34px;border-radius:50%;background:rgba(20,23,27,.55);backdrop-filter:blur(4px)}
 .vert .mark svg{width:9px;height:11px;fill:var(--light);margin-left:2px}
@@ -180,6 +183,8 @@ section{padding-block:clamp(38px,5vh,64px)}
 .night .btn:hover{background:transparent;color:var(--light)}
 .channel{display:flex;align-items:center;gap:18px;margin-bottom:12px}
 .channel img{width:60px;height:60px;border-radius:50%;object-fit:cover;background:var(--night-2)}
+.mono-logo{width:60px;height:60px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:var(--night-2);color:var(--light);font-family:var(--serif);font-size:26px;line-height:1}
 .channel .name{font-family:var(--serif);font-size:22px}
 .channel .sub{font-size:13.5px;color:rgba(240,239,236,.6)}
 .docs{display:grid;gap:clamp(18px,2.4vw,30px);grid-template-columns:1fr}
@@ -219,7 +224,7 @@ section[id]{scroll-margin-top:80px}
       <a href="#videos">Vidéos pro</a>
       <a href="#vertical">Formats verticaux</a>
       <a href="#services">Services</a>
-      <a href="#zunashy">ZunashyFr</a>
+      <a href="#zunafr">ZunaFr</a>
     </nav>
     <a class="cta" href="https://wa.me/33618627629">Me contacter</a>
   </div>
@@ -232,9 +237,8 @@ section[id]{scroll-margin-top:80px}
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow" style="margin-bottom:22px">Monteur vidéo indépendant</p>
+          <p class="eyebrow" style="margin-bottom:22px">Monteur vidéo</p>
           <h1>Des vidéos qui<br><em>disent quelque chose.</em></h1>
-          <p class="lead">Video Sales Letters, contenus UGC, sound design et formats verticaux pour des marques et des créateurs. Un bon monteur comprend son client&nbsp;; un expert développe le projet qu'on lui confie.</p>
           <div class="hero-actions">
             <a class="btn" href="https://wa.me/33618627629">Parler de votre projet</a>
             <a class="btn line" href="#videos">Voir les vidéos</a>
@@ -261,7 +265,6 @@ section[id]{scroll-margin-top:80px}
           <p class="eyebrow" style="margin-bottom:14px">Vidéos professionnelles</p>
           <h2>Sélection de projets</h2>
         </div>
-        <p class="lead">Chaque vidéo répond à un objectif défini avec le client&nbsp;: vendre une offre, présenter un produit, installer une crédibilité. Choisissez un projet pour le visionner.</p>
       </div>
 
       <div class="reel">
@@ -300,7 +303,6 @@ section[id]{scroll-margin-top:80px}
           <p class="eyebrow" style="margin-bottom:14px">Prestations</p>
           <h2>Comment je travaille</h2>
         </div>
-        <p class="lead">Un interlocuteur unique, du cadrage du message à la livraison des fichiers, avec deux allers-retours de retouches inclus sur chaque projet.</p>
       </div>
       <div class="services">
         <article class="rv">
@@ -329,40 +331,32 @@ section[id]{scroll-margin-top:80px}
           <h2>Ils m'ont fait confiance</h2>
         </div>
       </div>
-      <div class="refs">
-        <div class="ref rv">
-          <div class="logo"><img src="https://framerusercontent.com/images/qvUrHZMrqjMwrRWKgxOpWBfm8.png?width=1239&amp;height=1064" alt="" onerror="this.replaceWith(document.createTextNode('Y'))"></div>
-          <div><h3>Yoshizor</h3><p>Créateur de contenu gaming</p></div>
-        </div>
-        <div class="ref rv">
-          <div class="logo"><img src="https://framerusercontent.com/images/lNOxGvbPysi1rmq91MMoQ4U32k.jpg?width=100&amp;height=100" alt="" onerror="this.replaceWith(document.createTextNode('3F'))"></div>
-          <div><h3>3 Formes</h3><p>Création de sites web</p></div>
-        </div>
-      </div>
+      <div class="refs" id="refs-liste"></div>
     </section>
   </div>
 
-  <!-- ===================== ZUNASHYFR ===================== -->
+  <!-- ===================== ZUNAFR ===================== -->
   <div class="night">
     <div class="wrap">
-      <section id="zunashy">
+      <section id="zunafr">
         <div class="sec-head">
           <div>
             <p class="eyebrow" style="margin-bottom:14px">Projet personnel</p>
-            <h2>ZunashyFr</h2>
+            <h2>ZunaFr</h2>
           </div>
           <p class="lead">Ma chaîne documentaire consacrée à l'esport <em>League of Legends</em>. Écriture, recherche d'archives, narration et montage&nbsp;: le terrain où j'expérimente les formats longs.</p>
         </div>
         <div class="channel rv">
-          <img src="https://framerusercontent.com/images/69RECKY2hCCtxXeVbcIm0dFdLR8.png?width=594&amp;height=375" alt="Logo de la chaîne ZunashyFr" loading="lazy">
+          <img src="Images/zunafr-logo.png" alt="Logo de la chaîne ZunaFr" loading="lazy"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mono-logo',textContent:'Z'}))">
           <div>
-            <div class="name">ZunashyFr</div>
+            <div class="name">ZunaFr</div>
             <div class="sub">Documentaires sur les parcours de joueurs professionnels</div>
           </div>
         </div>
         <div class="docs" id="docs" style="margin-top:34px"></div>
         <div class="hero-actions">
-          <a class="btn" href="https://www.youtube.com/@ZunashyFr" target="_blank" rel="noopener">Voir la chaîne sur YouTube</a>
+          <a class="btn" href="https://www.youtube.com/@ZunaFr" target="_blank" rel="noopener">Voir la chaîne sur YouTube</a>
         </div>
       </section>
     </div>
@@ -374,9 +368,9 @@ section[id]{scroll-margin-top:80px}
       <div class="sec-head" style="border-top:0;padding-top:0">
         <div>
           <h2>Parlons de votre projet.</h2>
-          <p class="lead">Décrivez-moi votre besoin et votre échéance. Je reviens vers vous avec un angle, un format et un délai précis, pas un devis générique.</p>
-          <div class="hero-actions" style="margin-top:0">
+          <div class="hero-actions" style="margin-top:10px">
             <a class="btn" href="https://wa.me/33618627629">Écrire sur WhatsApp</a>
+            <a class="btn line" href="https://www.instagram.com/zunafr/" target="_blank" rel="noopener">Suivre sur Instagram</a>
           </div>
         </div>
       </div>
@@ -395,12 +389,9 @@ section[id]{scroll-margin-top:80px}
    id : identifiant YouTube, la fin de l'URL de la vidéo.
    ========================================================= */
 const VIDEOS_PRO = [
-  {id:'N6R_2u5iQiQ', titre:'Video Sales Letter', client:'Offre de service',
-   desc:"Script mis en images pour une offre de service : structure argumentaire, rythme et habillage."},
-  {id:'z2E19c3AfXc', titre:'Video Sales Letter', client:'Offre de service',
-   desc:"Seconde déclinaison, montage plus rythmé pour une diffusion en publicité payante."},
-  {id:'qte8ngmJ220', titre:'UGC Sony WH-1000XM3', client:'Produit',
-   desc:"Présentation du casque Sony WH-1000XM3 dans un format de démonstration produit."}
+  {id:'N6R_2u5iQiQ', titre:'Présentation Formation Polaris', client:'Formation', desc:''},
+  {id:'z2E19c3AfXc', titre:'Remix Sound Design',            client:'Sound design', desc:''},
+  {id:'qte8ngmJ220', titre:'UGC Casque Sony',               client:'Produit',      desc:''}
 ];
 
 /* reseau : 'youtube' (defaut) ou 'instagram'. Pour Instagram, id = code du post.
@@ -408,7 +399,18 @@ const VIDEOS_PRO = [
 const VERTICAUX = [
   {id:'SMuVtCp-b4Q', titre:'UGC Wilkinson'},
   {id:'qte8ngmJ220', titre:'UGC Sony'},
-  {reseau:'instagram', id:'DcovQ9dMVtN', titre:'Réel Instagram', poster:''}
+  {reseau:'instagram', id:'DcovQ9dMVtN', titre:'Présentation Aphelios', poster:''}
+];
+
+/* Ils m'ont fait confiance.
+   DOSSIER : le dossier des images, a ecrire exactement comme sur GitHub
+   (majuscules comprises). Un seul endroit a corriger si vous le renommez.
+   logo : nom du fichier. Laisser vide affiche les initiales. */
+const DOSSIER = 'Images/';
+const REFERENCES = [
+  {nom:'Yoshizor',   activite:'Créateur de contenu gaming', logo:'yoshizor.png'},
+  {nom:'3 Formes',   activite:'Création de sites web',      logo:'3-formes.jpg'},
+  {nom:'Oro Studio', activite:'Montage vidéo et miniatures', logo:'oro-studio.png'}
 ];
 
 const DOCUMENTAIRES = [
@@ -417,8 +419,18 @@ const DOCUMENTAIRES = [
 ];
 
 const PLAY = '<svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg>';
-const vignette = id => `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
-const repli = id => `this.onerror=null;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'`;
+/* YouTube ne genere pas tous les formats de miniature pour toutes les videos :
+   on essaie du plus defini au plus sur, hqdefault existant toujours. */
+const FORMATS = ['maxresdefault','sddefault','hqdefault','mqdefault'];
+function vignetteAuto(img){
+  const id = img.dataset.yt; let n = 0;
+  img.onerror = () => {
+    if(++n < FORMATS.length) img.src = `https://i.ytimg.com/vi/${id}/${FORMATS[n]}.jpg`;
+    else { img.onerror = null; img.style.display = 'none'; }
+  };
+  img.src = `https://i.ytimg.com/vi/${id}/${FORMATS[0]}.jpg`;
+}
+const poserVignettes = racine => racine.querySelectorAll('img[data-yt]').forEach(vignetteAuto);
 const lienYT = id => `https://www.youtube.com/watch?v=${id}`;
 const enLocal = location.protocol === 'file:';
 const lecteur = id => `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`;
@@ -434,11 +446,13 @@ function afficher(i, jouer){
   if(jouer && enLocal){ window.open(lienYT(v.id), '_blank', 'noopener'); jouer = false; }
   stage.innerHTML = jouer
     ? `<iframe src="${lecteur(v.id)}" title="${v.titre}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
-    : `<img id="stage-img" src="${vignette(v.id)}" alt="" onerror="${repli(v.id)}">
+    : `<img id="stage-img" data-yt="${v.id}" alt="">
        <button class="stage-btn" aria-label="Lire : ${v.titre}"></button>
        <span class="play"><i>${PLAY}</i>Lire la vidéo</span>`;
+  poserVignettes(stage);
   document.getElementById('stage-title').textContent = v.titre;
-  document.getElementById('stage-desc').textContent = v.desc;
+  const d = document.getElementById('stage-desc');
+  d.textContent = v.desc || ''; d.hidden = !v.desc;
   const l = document.getElementById('stage-link'); if(l) l.href = lienYT(v.id);
   [...liste.querySelectorAll('button')].forEach((b,n)=>b.setAttribute('aria-current', n===i ? 'true':'false'));
 }
@@ -459,23 +473,38 @@ const IG = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="2.6" wi
 
 VERTICAUX.forEach(v=>{
   const insta = v.reseau === 'instagram';
-  const src   = insta ? `https://www.instagram.com/p/${v.id}/embed/` : lecteur(v.id);
-  const lien  = insta ? `https://www.instagram.com/p/${v.id}/`       : lienYT(v.id);
+  const lien  = insta ? `https://www.instagram.com/reel/${v.id}/` : lienYT(v.id);
   const ou    = insta ? 'Ouvrir sur Instagram' : 'Ouvrir sur YouTube';
   const fond  = insta
     ? (v.poster
         ? `<img src="${v.poster}" alt="" loading="lazy">`
         : `<span class="ig-facade">${IG}<b>Réel Instagram</b></span>`)
-    : `<img src="${vignette(v.id)}" alt="" loading="lazy" onerror="${repli(v.id)}">`;
+    : `<img data-yt="${v.id}" alt="" loading="lazy">`;
   const el = document.createElement('article');
   el.className = 'vert rv';
-  el.innerHTML = `<button class="screen${insta ? ' ig' : ''}" data-src="${src}" data-lien="${lien}"
-        ${insta ? 'data-ratio="326"' : ''} aria-label="Lire : ${v.titre}">
+  el.innerHTML = `<button class="screen${insta ? ' ig' : ''}"
+        ${insta ? `data-externe="${lien}"` : `data-src="${lecteur(v.id)}" data-lien="${lien}"`}
+        aria-label="${insta ? 'Voir sur Instagram : ' : 'Lire : '}${v.titre}">
       ${fond}<span class="mark">${PLAY}</span>
     </button>
     <h3>${v.titre}</h3>
     <a class="ytlink" href="${lien}" target="_blank" rel="noopener">${ou}</a>`;
   verts.appendChild(el);
+  poserVignettes(el);
+});
+
+/* ---------- references ---------- */
+const initiales = nom => nom.split(/[\s-]+/).slice(0,2).map(m=>m[0]).join('').toUpperCase();
+const refs = document.getElementById('refs-liste');
+REFERENCES.forEach(r=>{
+  const el = document.createElement('div');
+  el.className = 'ref rv';
+  el.innerHTML = `<div class="logo">${r.logo
+      ? `<img src="${encodeURI(DOSSIER + r.logo)}" alt="" loading="lazy"
+             onerror="this.replaceWith(document.createTextNode('${initiales(r.nom)}'))">`
+      : initiales(r.nom)}</div>
+    <div><h3>${r.nom}</h3>${r.activite ? `<p>${r.activite}</p>` : ''}</div>`;
+  refs.appendChild(el);
 });
 
 /* ---------- documentaires ---------- */
@@ -484,11 +513,12 @@ DOCUMENTAIRES.forEach((id,i)=>{
   const el = document.createElement('article');
   el.className = 'doc rv';
   el.innerHTML = `<button class="screen" data-id="${id}" aria-label="Lire le documentaire">
-      <img src="${vignette(id)}" alt="" loading="lazy" onerror="${repli(id)}">
+      <img data-yt="${id}" alt="" loading="lazy">
     </button>
     <h3 data-titre>Documentaire</h3><span class="n">Épisode ${String(i+1).padStart(2,'0')}</span>
     <a class="ytlink" href="${lienYT(id)}" target="_blank" rel="noopener">Ouvrir sur YouTube</a>`;
   docs.appendChild(el);
+  poserVignettes(el);
   titreYoutube(id, el.querySelector('[data-titre]'));
 });
 
@@ -503,29 +533,17 @@ async function titreYoutube(id, node){
 
 /* lecture au clic : l'iframe n'est chargée qu'à ce moment-là */
 document.addEventListener('click', e=>{
+  const ext = e.target.closest('.screen[data-externe]');
+  if(ext){ window.open(ext.dataset.externe, '_blank', 'noopener'); return; }
   const b = e.target.closest('.screen[data-id], .screen[data-src]');
   if(!b) return;
   const lien = b.dataset.lien || lienYT(b.dataset.id);
   if(enLocal){ window.open(lien, '_blank', 'noopener'); return; }
-  const largeur = b.clientWidth, hauteur = b.clientHeight;
   const f = document.createElement('iframe');
   f.src = b.dataset.src || lecteur(b.dataset.id);
   f.title = 'Lecteur vidéo';
   f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
   f.allowFullscreen = true;
-  /* l'embed Instagram a une largeur minimale de 326 px : on le met à l'échelle de la carte */
-  if(b.dataset.ratio){
-    const base = +b.dataset.ratio, k = largeur / base;
-    f.setAttribute('scrolling','no');
-    Object.assign(f.style,{width:base+'px', height:(hauteur/k)+'px',
-      transform:`scale(${k})`, transformOrigin:'top left', border:'0'});
-    const cadre = document.createElement('div');
-    cadre.className = 'screen ig-live';
-    cadre.style.height = hauteur+'px';
-    cadre.appendChild(f);
-    b.replaceWith(cadre);
-    return;
-  }
   b.replaceWith(f);
 });
 
